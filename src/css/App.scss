@@ -2,52 +2,53 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 @import "./sass/colors";
-@import "./sass/typography";
+@import "./sass/layout";
 @import "./sass/spacing";
+@import "./sass/typography";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   width: 100%;
+  position: relative;
 
-  background-color: #050607;
+  background-color: $black-dark;
+
+  &::-webkit-scrollbar {
+    padding-right: 2px;
+    width: 8px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: $black-light;
+  }
 }
 
-@import "./sass/layout";
-
-.add-button {
-  display: block;
-  border: 0;
-
-  background-color: green;
-  color: white;
-  font-size: 64px;
-
-  border-radius: 4px;
-
-  padding: 16px;
+.border {
+  border: 1px solid red;
 }
 
-.remove-button {
-  display: block;
-  border: 0;
-
-  background-color: red;
-  color: white;
-  font-size: 64px;
-
-  border-radius: 4px;
-
-  padding: 16px;
+.hidden {
+  overflow: hidden;
 }
 
-button {
-  padding: 8px;
-
-  background-color: $white-normal;
-
-  border: 0;
-  border-radius: 4px;
+.relative {
+  position: relative;
 }
+
+svg,
+img {
+  width: 100%;
+  //height: auto;
+}
+
+@import "./sass/menu";
+@import "./sass/icons";
+@import "./sass/button";
